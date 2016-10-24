@@ -1,2 +1,4 @@
-./.idea/**
-./base/.idea/**
+./.idea/*
+./base/.idea/*
+/.idea/*
+/base/.idea/*
