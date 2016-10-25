@@ -42,6 +42,14 @@ class E
   @sides = 8
 end
 p E.sides  #8
+#等价于    class << self  单态模式，重写父类的方法
+class H
+  @boys = 6
+  def self.boys
+    @boys
+  end
+end
+p H.boys
 
 class F < E
   @sides = 3
@@ -56,4 +64,24 @@ end
 g = G.new
 g.sides = 1024
 p g.sides
+
+
+
+#单态
+a = "hello"
+p a.size   #5  某个方法固属于某个对象
+def a.size
+  356
+end
+p a.size  #356
+
+b = "test"
+p b. #4
+class << b
+  def size
+    2048
+  end
+end
+p b.size #2048
+
 
