@@ -76,7 +76,7 @@ end
 p a.size  #356
 
 b = "test"
-p b. #4
+p b #4
 class << b
   def size
     2048
