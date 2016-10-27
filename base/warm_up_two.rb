@@ -45,9 +45,6 @@ l  = lambda{}
 #参数检查 proc  Proc.new  yield都不检查    而lambda ->都检查很严格
 
 
-
-
-
 #proc在行为上更趋近于block     lambda其实是方法，只不过是匿名的
 def example_one
   return 0     #这个就是proc的意味
@@ -81,8 +78,11 @@ four = example_four
 five = example_five
 
 p example_three(five)     #1
-p example_three(four)    #这个会报异常  block in example_four': unexpected return (LocalJumpError)
+#p example_three(four)    #这个会报异常  block in example_four': unexpected return (LocalJumpError)
 
+
+block = ->(arg1, arg2){ arg1 * arg2 }
+p block.call(5, 6)
 
 
 
