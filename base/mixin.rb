@@ -31,7 +31,7 @@ p '---------***----------'
 
 module ExtendThroughInclude
   def self.included(klass)
-    klass.extend ClassMethods
+    klass.send("extend", ClassMethods)
   end
 
   def instance_method
@@ -49,5 +49,8 @@ class Person
   include ExtendThroughInclude
 end
 
+
+p Person.new.instance_method
+p Person.class_method
 
 
