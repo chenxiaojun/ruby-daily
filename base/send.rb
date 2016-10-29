@@ -19,6 +19,6 @@ loop do
     send("example_#{num}", "haha")
   else
     print "输入有误\n"
-    exit;
+    break
   end
 end
