@@ -59,7 +59,7 @@ def my_tail(lnumber, file)
     #   end
     # end
     #解法二
-    f.readlines.reverse.each_with_index { |val, key| queue << val if key < 3}
+    f.readlines.reverse.each_with_index { |val, key| queue << val if key < lnumber}
   end
   queue.each{|l| p l.chomp}
 end
