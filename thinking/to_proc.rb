@@ -9,9 +9,10 @@ my_lambda = :to_s.my_to_proc
 puts my_lambda.(1)  # prints '1'; .() does the same thing as .call()
 puts my_lambda.(1).class  # prints 'String'
 
-puts [4,5,6].map(&:to_s)  # prints "4\n5\n6\n"
+puts [4,5,6].map(&:to_s)  # prints "4\n5\n6\n"  #这个地方其实是把参数和Symbol返回的块传递到数组里面处理了。
 puts [4,5,6].map(&:to_s).first.class  # prints 'String'
 
+Array
 
 class Symbol
   def to_proc
@@ -35,3 +36,6 @@ end
 
 remapped_array = [0, 1, 2].map &:to_s
 puts "remapped array: #{remapped_array.inspect}"
+
+
+#  Symbol proc: #{0}.send(:0)
