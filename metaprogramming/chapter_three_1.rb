@@ -29,6 +29,7 @@ class A
   end
 end
 
+#send里面第一个参数是方法名， 第二个参数是需要的参数
 A.new.send(:test) #haha
 #A.new.public_send(:test)#这种方式访问就不会破坏面向对象私有化的特性
 

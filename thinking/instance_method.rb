@@ -12,12 +12,8 @@ a.instance_eval do
 end
 p a.methods.grep(/^test/) #[:test2, :test1]
 p a.class.instance_methods.grep(/^test/)  #[:test1]
-
+p a.singleton_class.instance_methods.grep(/^test/) #[:test2, :test1]
 
 #问题2   String是Class类的一个实例， String继承自Object   这种思想如何用代码来实现  比如有A,B,C三个类，如何实现A继承自B，并且A是C的实例
 p String.class      #Class
 p String.superclass #Object
-
-
-
-
