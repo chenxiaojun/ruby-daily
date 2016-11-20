@@ -13,3 +13,5 @@ p obj.my_method(5) #15
 p self.class
 send(:method_missing, :Ricky)
 
+
+
