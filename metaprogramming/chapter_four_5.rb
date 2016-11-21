@@ -28,3 +28,20 @@ my_method(1, 2, &proc)
 my_method(4, 6, &lambda{|a, b| puts 'xxxx'})  #如果这地方去掉& 那么相应方法里面直接用普通参数的形式接收就好了
 
 
+p '--------------****&&^%^-----------------'
+
+class Thinking
+  def initialize(value)
+    @v = value
+  end
+
+  def get_val
+    @v
+  end
+end
+
+obj = Thinking.new(2)
+o = obj.method :get_val #这里去调用了Kernel#method方法，可以获得一个用Method对象表示的方法 后面可以使用Method#call进行调用
+#Method对象类似于代码块或lambda
+p o.call #2
+p o.class
